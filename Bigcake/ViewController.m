@@ -27,11 +27,13 @@
         [_button setTitle:@"ok" forState:UIControlStateNormal];
         [_button setBackgroundColor:[UIColor cyanColor]];
         [_button setFrame:CGRectMake(100, 100, 100, 100)];
+//        [_button setSize:CGSizeMake([UI], <#CGFloat height#>)];
     }
     return _button;
 }
 
 - (void)bcpInitView {
+    [super bcpInitView];
     [self.view addSubview:self.button];
 }
 

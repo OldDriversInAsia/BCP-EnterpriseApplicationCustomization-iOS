@@ -11,4 +11,6 @@
 
 @interface BCPViewController : UIViewController
 
+- (void)bcpInitView;
+
 @end
