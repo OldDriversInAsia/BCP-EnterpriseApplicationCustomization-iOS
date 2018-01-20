@@ -43,5 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ 143  git branch
+ 140  git add .
+ 141  git commit -am "20180121"
+ 144  git push origin develop:develop
+ 151  git checkout master
+ 156  git branch
+ 157  git merge develop
+ 155  git push origin master:master
+ */
+
 
 @end
