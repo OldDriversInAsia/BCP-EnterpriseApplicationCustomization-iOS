@@ -39,6 +39,7 @@
 
 - (void)bcpInitView {
     NSLog(@"BCPInitView");
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
 - (void)didReceiveMemoryWarning {

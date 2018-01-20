@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */; };
+		0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36952013B4B1006DBA2E /* NetworkUtil.m */; };
 		0ED820342007CA69004ED800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820332007CA69004ED800 /* AppDelegate.m */; };
 		0ED820372007CA69004ED800 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820362007CA69004ED800 /* ViewController.m */; };
 		0ED8203A2007CA69004ED800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED820382007CA69004ED800 /* Main.storyboard */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EBD36902013A715006DBA2E /* BCPLayoutConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPLayoutConsts.h; sourceTree = "<group>"; };
+		0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPLayoutConsts.m; sourceTree = "<group>"; };
+		0EBD36942013B4B1006DBA2E /* NetworkUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
+		0EBD36952013B4B1006DBA2E /* NetworkUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
 		0ED8202F2007CA69004ED800 /* Bigcake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigcake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED820322007CA69004ED800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ED820332007CA69004ED800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EBD368D2013A4CE006DBA2E /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD36902013A715006DBA2E /* BCPLayoutConsts.h */,
+				0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		0EBD36932013B322006DBA2E /* NetworkUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD36942013B4B1006DBA2E /* NetworkUtil.h */,
+				0EBD36952013B4B1006DBA2E /* NetworkUtil.m */,
+			);
+			path = NetworkUtil;
+			sourceTree = "<group>";
+		};
 		0ED820262007CA69004ED800 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +113,8 @@
 		0ED8204A2007CB66004ED800 /* Bigcake */ = {
 			isa = PBXGroup;
 			children = (
+				0EBD36932013B322006DBA2E /* NetworkUtil */,
+				0EBD368D2013A4CE006DBA2E /* Consts */,
 				0EFE7F052011045E000F337C /* UIViewController */,
 				0EFE7F04201102F2000F337C /* PrefixHeader.pch */,
 			);
@@ -249,8 +275,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ED820372007CA69004ED800 /* ViewController.m in Sources */,
+				0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */,
 				0ED820422007CA69004ED800 /* main.m in Sources */,
 				0EFE7F082011045E000F337C /* UIViewController+InitUI.m in Sources */,
+				0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */,
 				0EFE7F0B2011049A000F337C /* BCPViewController.m in Sources */,
 				0ED820342007CA69004ED800 /* AppDelegate.m in Sources */,
 			);
@@ -395,7 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.bigcake.bigcake.Bigcake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -412,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.bigcake.bigcake.Bigcake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

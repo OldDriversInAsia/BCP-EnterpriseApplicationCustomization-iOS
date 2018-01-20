@@ -6,6 +6,9 @@ target 'Bigcake' do
   # use_frameworks!
 
   pod 'YYKit'
+  pod 'AFNetworking'
+  pod 'ReactiveCocoa',' ~> 2.5'
+  pod 'JSONModel'
 
   # Pods for Bigcake
 
