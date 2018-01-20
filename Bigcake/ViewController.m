@@ -44,14 +44,14 @@
 }
 
 /**
- 143  git branch
- 140  git add .
- 141  git commit -am "20180121"
- 144  git push origin develop:develop
- 151  git checkout master
- 156  git branch
- 157  git merge develop
- 155  git push origin master:master
+ git branch
+ git add .
+ git commit -am "20180121"
+ git push origin develop:develop
+ git checkout master
+ git branch
+ git merge develop
+ git push origin master:master
  */
 
 
