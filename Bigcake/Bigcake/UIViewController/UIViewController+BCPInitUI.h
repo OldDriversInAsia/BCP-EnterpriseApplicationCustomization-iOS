@@ -1,5 +1,5 @@
 //
-//  UIViewController+InitUI.h
+//  UIViewController+BCPInitUI.h
 //  Bigcake
 //
 //  Created by 武国斌 on 2018/1/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (InitUI)
+@interface UIViewController (BCPInitUI)
 
 - (void)bcpInitUI;
 

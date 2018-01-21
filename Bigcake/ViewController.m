@@ -11,6 +11,8 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) UIButton *button1;
+
 
 @end
 
@@ -24,18 +26,43 @@
 - (UIButton *)button {
     if (!_button) {
         _button = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_button setTitle:@"ok" forState:UIControlStateNormal];
+        [_button setTitle:@"login" forState:UIControlStateNormal];
         [_button setBackgroundColor:[UIColor cyanColor]];
         [_button setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
         [_button setCenterX:HALF_OF(kScreenWidth)];
-        [_button setCenterY:kScreenHeight * 0.8];
+        [_button setCenterY:kScreenHeight * 0.6];
+        
+        [_button addTapAction:^(id sender) {
+            [NetworkUtil POSTPath:BCP_LOGIN parameters:@{@"loginName":@"lidada1",@"password":@"123456"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
+                NSLog(@"%@",JSONString);
+            }];
+        }];
     }
     return _button;
+}
+
+- (UIButton *)button1 {
+    if (!_button1) {
+        _button1 = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_button1 setTitle:@"test" forState:UIControlStateNormal];
+        [_button1 setBackgroundColor:[UIColor yellowColor]];
+        [_button1 setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
+        [_button1 setCenterX:HALF_OF(kScreenWidth)];
+        [_button1 setCenterY:kScreenHeight * 0.8];
+        
+        [_button1 addTapAction:^(id sender) {
+            [NetworkUtil GETPath:BCP_TEST parameters:@{@"param":@"Hello,world!"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
+                NSLog(@"%@",JSONString);
+            }];
+        }];
+    }
+    return _button1;
 }
 
 - (void)bcpInitView {
     [super bcpInitView];
     [self.view addSubview:self.button];
+    [self.view addSubview:self.button1];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */; };
 		0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36952013B4B1006DBA2E /* NetworkUtil.m */; };
+		0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD3699201455DB006DBA2E /* NetworkUtil+Get.m */; };
+		0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD369C201455E5006DBA2E /* NetworkUtil+Post.m */; };
+		0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */; };
+		0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */; };
+		0EBD36AA2014DD03006DBA2E /* UIButton+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A92014DD03006DBA2E /* UIButton+Add.m */; };
 		0ED820342007CA69004ED800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820332007CA69004ED800 /* AppDelegate.m */; };
 		0ED820372007CA69004ED800 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820362007CA69004ED800 /* ViewController.m */; };
 		0ED8203A2007CA69004ED800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED820382007CA69004ED800 /* Main.storyboard */; };
 		0ED8203C2007CA69004ED800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8203B2007CA69004ED800 /* Assets.xcassets */; };
 		0ED8203F2007CA69004ED800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8203D2007CA69004ED800 /* LaunchScreen.storyboard */; };
 		0ED820422007CA69004ED800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820412007CA69004ED800 /* main.m */; };
-		0EFE7F082011045E000F337C /* UIViewController+InitUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFE7F072011045E000F337C /* UIViewController+InitUI.m */; };
+		0EFE7F082011045E000F337C /* UIViewController+BCPInitUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */; };
 		0EFE7F0B2011049A000F337C /* BCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFE7F0A2011049A000F337C /* BCPViewController.m */; };
 		AC91E37278756C1C16BAB4B0 /* libPods-Bigcake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC050810F058F2F03B4A64E9 /* libPods-Bigcake.a */; };
 /* End PBXBuildFile section */
@@ -25,6 +30,17 @@
 		0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPLayoutConsts.m; sourceTree = "<group>"; };
 		0EBD36942013B4B1006DBA2E /* NetworkUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
 		0EBD36952013B4B1006DBA2E /* NetworkUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkUtil.m; sourceTree = "<group>"; };
+		0EBD3698201455DA006DBA2E /* NetworkUtil+Get.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkUtil+Get.h"; sourceTree = "<group>"; };
+		0EBD3699201455DB006DBA2E /* NetworkUtil+Get.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NetworkUtil+Get.m"; sourceTree = "<group>"; };
+		0EBD369B201455E5006DBA2E /* NetworkUtil+Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NetworkUtil+Post.h"; sourceTree = "<group>"; };
+		0EBD369C201455E5006DBA2E /* NetworkUtil+Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NetworkUtil+Post.m"; sourceTree = "<group>"; };
+		0EBD369F2014B24E006DBA2E /* BCPNetworkConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPNetworkConst.h; sourceTree = "<group>"; };
+		0EBD36A02014B51A006DBA2E /* BCPCookieManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPCookieManager.h; sourceTree = "<group>"; };
+		0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPCookieManager.m; sourceTree = "<group>"; };
+		0EBD36A32014BAC1006DBA2E /* BCPFrameworkConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPFrameworkConsts.h; sourceTree = "<group>"; };
+		0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPFrameworkConsts.m; sourceTree = "<group>"; };
+		0EBD36A82014DD03006DBA2E /* UIButton+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Add.h"; sourceTree = "<group>"; };
+		0EBD36A92014DD03006DBA2E /* UIButton+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Add.m"; sourceTree = "<group>"; };
 		0ED8202F2007CA69004ED800 /* Bigcake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigcake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED820322007CA69004ED800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ED820332007CA69004ED800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,8 +52,8 @@
 		0ED820402007CA69004ED800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED820412007CA69004ED800 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0EFE7F04201102F2000F337C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		0EFE7F062011045E000F337C /* UIViewController+InitUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InitUI.h"; sourceTree = "<group>"; };
-		0EFE7F072011045E000F337C /* UIViewController+InitUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InitUI.m"; sourceTree = "<group>"; };
+		0EFE7F062011045E000F337C /* UIViewController+BCPInitUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BCPInitUI.h"; sourceTree = "<group>"; };
+		0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BCPInitUI.m"; sourceTree = "<group>"; };
 		0EFE7F092011049A000F337C /* BCPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPViewController.h; sourceTree = "<group>"; };
 		0EFE7F0A2011049A000F337C /* BCPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPViewController.m; sourceTree = "<group>"; };
 		4005FE8565E624BA8F7D92FC /* Pods-Bigcake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bigcake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bigcake/Pods-Bigcake.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +78,9 @@
 			children = (
 				0EBD36902013A715006DBA2E /* BCPLayoutConsts.h */,
 				0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */,
+				0EBD369F2014B24E006DBA2E /* BCPNetworkConst.h */,
+				0EBD36A32014BAC1006DBA2E /* BCPFrameworkConsts.h */,
+				0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
@@ -71,8 +90,23 @@
 			children = (
 				0EBD36942013B4B1006DBA2E /* NetworkUtil.h */,
 				0EBD36952013B4B1006DBA2E /* NetworkUtil.m */,
+				0EBD3698201455DA006DBA2E /* NetworkUtil+Get.h */,
+				0EBD3699201455DB006DBA2E /* NetworkUtil+Get.m */,
+				0EBD369B201455E5006DBA2E /* NetworkUtil+Post.h */,
+				0EBD369C201455E5006DBA2E /* NetworkUtil+Post.m */,
+				0EBD36A02014B51A006DBA2E /* BCPCookieManager.h */,
+				0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */,
 			);
 			path = NetworkUtil;
+			sourceTree = "<group>";
+		};
+		0EBD36A62014DC3B006DBA2E /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				0EBD36A82014DD03006DBA2E /* UIButton+Add.h */,
+				0EBD36A92014DD03006DBA2E /* UIButton+Add.m */,
+			);
+			path = UIButton;
 			sourceTree = "<group>";
 		};
 		0ED820262007CA69004ED800 = {
@@ -116,6 +150,7 @@
 				0EBD36932013B322006DBA2E /* NetworkUtil */,
 				0EBD368D2013A4CE006DBA2E /* Consts */,
 				0EFE7F052011045E000F337C /* UIViewController */,
+				0EBD36A62014DC3B006DBA2E /* UIButton */,
 				0EFE7F04201102F2000F337C /* PrefixHeader.pch */,
 			);
 			path = Bigcake;
@@ -124,8 +159,8 @@
 		0EFE7F052011045E000F337C /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0EFE7F062011045E000F337C /* UIViewController+InitUI.h */,
-				0EFE7F072011045E000F337C /* UIViewController+InitUI.m */,
+				0EFE7F062011045E000F337C /* UIViewController+BCPInitUI.h */,
+				0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */,
 				0EFE7F092011049A000F337C /* BCPViewController.h */,
 				0EFE7F0A2011049A000F337C /* BCPViewController.m */,
 			);
@@ -277,10 +312,15 @@
 				0ED820372007CA69004ED800 /* ViewController.m in Sources */,
 				0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */,
 				0ED820422007CA69004ED800 /* main.m in Sources */,
-				0EFE7F082011045E000F337C /* UIViewController+InitUI.m in Sources */,
+				0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */,
+				0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */,
+				0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */,
+				0EFE7F082011045E000F337C /* UIViewController+BCPInitUI.m in Sources */,
+				0EBD36AA2014DD03006DBA2E /* UIButton+Add.m in Sources */,
 				0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */,
 				0EFE7F0B2011049A000F337C /* BCPViewController.m in Sources */,
 				0ED820342007CA69004ED800 /* AppDelegate.m in Sources */,
+				0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

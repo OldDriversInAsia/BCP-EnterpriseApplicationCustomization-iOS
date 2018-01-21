@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+InitUI.h"
+#import "UIViewController+BCPInitUI.h"
 
 @interface BCPViewController : UIViewController
 
