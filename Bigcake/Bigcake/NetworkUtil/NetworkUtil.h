@@ -74,11 +74,6 @@ typedef NS_ENUM(NSInteger, RequsetType) {
          scrollView:(UIScrollView *)scrollView
         requsetType:(RequsetType)type;
 
-/**
- *  获取用户信息的接口做判断
- *  如果用户信息不完整，则弹出补充用户信息的界面
- */
-+ (void)checkUserInfoComplete:(NSString *)path parameters:(NSDictionary *)parameters responseObject:(NSDictionary *)responseObject;
 
 /**
  *  添加通用的请求参数

@@ -19,6 +19,7 @@
 
 @implementation NetworkUtil
 
+//网络请求
 + (void)requestPath:(NSString *)path
          parameters:(NSDictionary *)parameters
             success:(void (^)(NSURLSessionDataTask * task , NSDictionary* responseObject , NSString *JSONString))success
@@ -51,6 +52,7 @@
     }
 }
 
+//成功处理
 + (void)handleRequestSuccessPath:(NSString *)path
                       parameters:(NSDictionary *)parameters
                             task:(NSURLSessionDataTask *)task
@@ -86,6 +88,7 @@
 //    [showViewController hideProgressHUD];
 }
 
+//失败处理
 + (void)handleRequestFailedPath:(NSString *)path
                            task:(NSURLSessionDataTask *)task
                           error:(NSError *)error
@@ -109,6 +112,15 @@
     }
 }
 
+//json解析
++ (NSString *)getJSONString:(NSDictionary *)responseObject {
+    if (responseObject) {
+        return [[NSString alloc] initWithData: [NSJSONSerialization dataWithJSONObject:responseObject options:kNilOptions error:nil] encoding: NSUTF8StringEncoding];
+    }
+    return nil;
+}
+
+//获取网络请求实例
 + (AFHTTPSessionManager *)shareManager {
     static AFHTTPSessionManager *manager = nil;
     static dispatch_once_t onceToken;
@@ -134,12 +146,22 @@
     return manager;
 }
 
+/**
+ * 清空线程池
+ */
++ (void)requestPathWithCancelAllOperations:(NSString *)path parameters:(NSDictionary *)parameters success:(void (^)(NSURLSessionDataTask * task , id responseObject , NSString *JSONString))success showViewController:(UIViewController *)showViewController requsetType:(RequsetType)type {
+    [[[self shareManager] operationQueue] cancelAllOperations];
+    [self requestPath:path parameters:parameters success:success failure:nil showText:nil showViewController:showViewController checkOut:YES scrollView:nil requsetType:type];
+}
+
+//设置cookie
 + (void)setCookie:(AFHTTPSessionManager *)manager {
     NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
     [manager.requestSerializer setHTTPShouldHandleCookies:YES];
     [manager.requestSerializer setValue:cookiesString forHTTPHeaderField:@"cookie"];
 }
 
+//保存cookie
 + (void)saveCookie:(AFHTTPSessionManager *)manager {
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
     NSMutableArray *cookiesStringArray = [NSMutableArray array];
@@ -153,6 +175,11 @@
 //        [SharedFrameworksHelper.user save];
     }
 }
+
+
+
+
+
 
 
 
@@ -196,26 +223,6 @@
     return [[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus];
 }
 
-/**
- * 清空线程池
- */
-+ (void)requestPathWithCancelAllOperations:(NSString *)path parameters:(NSDictionary *)parameters success:(void (^)(NSURLSessionDataTask * task , id responseObject , NSString *JSONString))success showViewController:(UIViewController *)showViewController requsetType:(RequsetType)type {
-    [[[self shareManager] operationQueue] cancelAllOperations];
-    [self requestPath:path parameters:parameters success:success failure:nil showText:nil showViewController:showViewController checkOut:YES scrollView:nil requsetType:type];
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 + (BOOL)handleReachable:(UIScrollView *)scrollView showViewController:(UIViewController *)showViewController {
 //    if (![self isReachable] && [self networkReachabilityStatus] != AFNetworkReachabilityStatusUnknown) {
 //        if (!SharedFrameworksHelper.isShowingNoConnectAlert) {
@@ -237,10 +244,6 @@
 //        [showViewController showProgressHUD:showText];
 //    }
 }
-
-
-
-
 
 + (void)onRequestFaied:(NSString *)errorUserInfo {
 //    if ([errorUserInfo containsString:@"403"]) {
@@ -282,9 +285,6 @@
 //#endif
 }
 
-+ (void)checkUserInfoComplete:(NSString *)path parameters:(NSDictionary *)parameters responseObject:(NSDictionary *)responseObject {
-}
-
 + (NSDictionary *)commonParameters:(NSDictionary *)parameters scrollView:(UIScrollView *)scrollView {
     NSMutableDictionary *commonParameters = [NSMutableDictionary dictionaryWithDictionary:parameters];
     if (scrollView) {
@@ -301,13 +301,6 @@
 //        [commonParameters setValue:@(scrollView.count) forKey:KEY_NET_WORK_COUNT];
     }
     return commonParameters;
-}
-
-+ (NSString *)getJSONString:(NSDictionary *)responseObject {
-    if (responseObject) {
-        return [[NSString alloc] initWithData: [NSJSONSerialization dataWithJSONObject:responseObject options:kNilOptions error:nil] encoding: NSUTF8StringEncoding];
-    }
-    return nil;
 }
 
 @end
