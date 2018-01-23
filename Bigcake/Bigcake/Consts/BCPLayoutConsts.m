@@ -18,3 +18,6 @@ CGFloat fixValue(CGFloat value) {
     }
 }
 
+CGFloat half_of(CGFloat value) {
+    return (fixValue((value) / (2.f)));
+}

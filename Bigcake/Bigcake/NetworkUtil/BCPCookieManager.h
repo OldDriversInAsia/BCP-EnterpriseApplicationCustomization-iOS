@@ -18,6 +18,5 @@
 + (BCPCookieManager *)shareManager;
 - (NSString *)cookie;
 - (void)set:(NSString *)cookie;
-+ (NSString *)genCookieWith:(NSString *)cookie;
 
 @end

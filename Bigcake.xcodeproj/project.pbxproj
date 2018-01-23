@@ -13,16 +13,16 @@
 		0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD369C201455E5006DBA2E /* NetworkUtil+Post.m */; };
 		0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */; };
 		0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */; };
-		0EBD36AA2014DD03006DBA2E /* UIButton+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A92014DD03006DBA2E /* UIButton+Add.m */; };
 		0ED820342007CA69004ED800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820332007CA69004ED800 /* AppDelegate.m */; };
 		0ED820372007CA69004ED800 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820362007CA69004ED800 /* ViewController.m */; };
 		0ED8203A2007CA69004ED800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED820382007CA69004ED800 /* Main.storyboard */; };
 		0ED8203C2007CA69004ED800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8203B2007CA69004ED800 /* Assets.xcassets */; };
 		0ED8203F2007CA69004ED800 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED8203D2007CA69004ED800 /* LaunchScreen.storyboard */; };
 		0ED820422007CA69004ED800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820412007CA69004ED800 /* main.m */; };
-		0EFB068C2015695B002F1596 /* NetworkingInuse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFB068B2015695B002F1596 /* NetworkingInuse.m */; };
-		0EFE7F082011045E000F337C /* UIViewController+BCPInitUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */; };
-		0EFE7F0B2011049A000F337C /* BCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EFE7F0A2011049A000F337C /* BCPViewController.m */; };
+		0EF00F72201799AF00B6000A /* UIButton+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF00F6B201799AF00B6000A /* UIButton+Add.m */; };
+		0EF00F73201799AF00B6000A /* BCPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF00F6F201799AF00B6000A /* BCPViewController.m */; };
+		0EF00F74201799AF00B6000A /* UIViewController+BCPInitUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF00F70201799AF00B6000A /* UIViewController+BCPInitUI.m */; };
+		0EF00F77201799CD00B6000A /* NSString+append.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF00F76201799CD00B6000A /* NSString+append.m */; };
 		AC91E37278756C1C16BAB4B0 /* libPods-Bigcake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC050810F058F2F03B4A64E9 /* libPods-Bigcake.a */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +40,6 @@
 		0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPCookieManager.m; sourceTree = "<group>"; };
 		0EBD36A32014BAC1006DBA2E /* BCPFrameworkConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPFrameworkConsts.h; sourceTree = "<group>"; };
 		0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPFrameworkConsts.m; sourceTree = "<group>"; };
-		0EBD36A82014DD03006DBA2E /* UIButton+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Add.h"; sourceTree = "<group>"; };
-		0EBD36A92014DD03006DBA2E /* UIButton+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Add.m"; sourceTree = "<group>"; };
 		0ED8202F2007CA69004ED800 /* Bigcake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigcake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED820322007CA69004ED800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ED820332007CA69004ED800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,13 +50,15 @@
 		0ED8203E2007CA69004ED800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0ED820402007CA69004ED800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ED820412007CA69004ED800 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0EFB068A2015695B002F1596 /* NetworkingInuse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingInuse.h; sourceTree = "<group>"; };
-		0EFB068B2015695B002F1596 /* NetworkingInuse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingInuse.m; sourceTree = "<group>"; };
+		0EF00F6B201799AF00B6000A /* UIButton+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Add.m"; sourceTree = "<group>"; };
+		0EF00F6C201799AF00B6000A /* UIButton+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Add.h"; sourceTree = "<group>"; };
+		0EF00F6E201799AF00B6000A /* UIViewController+BCPInitUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BCPInitUI.h"; sourceTree = "<group>"; };
+		0EF00F6F201799AF00B6000A /* BCPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCPViewController.m; sourceTree = "<group>"; };
+		0EF00F70201799AF00B6000A /* UIViewController+BCPInitUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BCPInitUI.m"; sourceTree = "<group>"; };
+		0EF00F71201799AF00B6000A /* BCPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCPViewController.h; sourceTree = "<group>"; };
+		0EF00F75201799CD00B6000A /* NSString+append.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+append.h"; sourceTree = "<group>"; };
+		0EF00F76201799CD00B6000A /* NSString+append.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+append.m"; sourceTree = "<group>"; };
 		0EFE7F04201102F2000F337C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		0EFE7F062011045E000F337C /* UIViewController+BCPInitUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BCPInitUI.h"; sourceTree = "<group>"; };
-		0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BCPInitUI.m"; sourceTree = "<group>"; };
-		0EFE7F092011049A000F337C /* BCPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPViewController.h; sourceTree = "<group>"; };
-		0EFE7F0A2011049A000F337C /* BCPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPViewController.m; sourceTree = "<group>"; };
 		4005FE8565E624BA8F7D92FC /* Pods-Bigcake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bigcake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bigcake/Pods-Bigcake.debug.xcconfig"; sourceTree = "<group>"; };
 		A61E0A2CE2211FA6EEA5144B /* Pods-Bigcake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bigcake.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bigcake/Pods-Bigcake.release.xcconfig"; sourceTree = "<group>"; };
 		FC050810F058F2F03B4A64E9 /* libPods-Bigcake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bigcake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,15 +103,6 @@
 			path = NetworkUtil;
 			sourceTree = "<group>";
 		};
-		0EBD36A62014DC3B006DBA2E /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				0EBD36A82014DD03006DBA2E /* UIButton+Add.h */,
-				0EBD36A92014DD03006DBA2E /* UIButton+Add.m */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
 		0ED820262007CA69004ED800 = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				0ED8204A2007CB66004ED800 /* Bigcake */,
-				0EFB0689201568DB002F1596 /* Inuse */,
 				0ED820322007CA69004ED800 /* AppDelegate.h */,
 				0ED820332007CA69004ED800 /* AppDelegate.m */,
 				0ED820352007CA69004ED800 /* ViewController.h */,
@@ -153,29 +143,55 @@
 			children = (
 				0EBD36932013B322006DBA2E /* NetworkUtil */,
 				0EBD368D2013A4CE006DBA2E /* Consts */,
-				0EFE7F052011045E000F337C /* UIViewController */,
-				0EBD36A62014DC3B006DBA2E /* UIButton */,
+				0EF00F67201799AF00B6000A /* Foundation */,
+				0EF00F69201799AF00B6000A /* UIKit */,
 				0EFE7F04201102F2000F337C /* PrefixHeader.pch */,
 			);
 			path = Bigcake;
 			sourceTree = "<group>";
 		};
-		0EFB0689201568DB002F1596 /* Inuse */ = {
+		0EF00F67201799AF00B6000A /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				0EFB068A2015695B002F1596 /* NetworkingInuse.h */,
-				0EFB068B2015695B002F1596 /* NetworkingInuse.m */,
+				0EF00F68201799AF00B6000A /* NSString */,
 			);
-			path = Inuse;
+			path = Foundation;
 			sourceTree = "<group>";
 		};
-		0EFE7F052011045E000F337C /* UIViewController */ = {
+		0EF00F68201799AF00B6000A /* NSString */ = {
 			isa = PBXGroup;
 			children = (
-				0EFE7F062011045E000F337C /* UIViewController+BCPInitUI.h */,
-				0EFE7F072011045E000F337C /* UIViewController+BCPInitUI.m */,
-				0EFE7F092011049A000F337C /* BCPViewController.h */,
-				0EFE7F0A2011049A000F337C /* BCPViewController.m */,
+				0EF00F75201799CD00B6000A /* NSString+append.h */,
+				0EF00F76201799CD00B6000A /* NSString+append.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		0EF00F69201799AF00B6000A /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0EF00F6A201799AF00B6000A /* UIButton */,
+				0EF00F6D201799AF00B6000A /* UIViewController */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0EF00F6A201799AF00B6000A /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				0EF00F6B201799AF00B6000A /* UIButton+Add.m */,
+				0EF00F6C201799AF00B6000A /* UIButton+Add.h */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		0EF00F6D201799AF00B6000A /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0EF00F6E201799AF00B6000A /* UIViewController+BCPInitUI.h */,
+				0EF00F70201799AF00B6000A /* UIViewController+BCPInitUI.m */,
+				0EF00F71201799AF00B6000A /* BCPViewController.h */,
+				0EF00F6F201799AF00B6000A /* BCPViewController.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -322,19 +338,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF00F77201799CD00B6000A /* NSString+append.m in Sources */,
+				0EF00F73201799AF00B6000A /* BCPViewController.m in Sources */,
 				0ED820372007CA69004ED800 /* ViewController.m in Sources */,
 				0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */,
 				0ED820422007CA69004ED800 /* main.m in Sources */,
 				0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */,
 				0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */,
+				0EF00F72201799AF00B6000A /* UIButton+Add.m in Sources */,
 				0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */,
-				0EFE7F082011045E000F337C /* UIViewController+BCPInitUI.m in Sources */,
-				0EBD36AA2014DD03006DBA2E /* UIButton+Add.m in Sources */,
 				0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */,
-				0EFE7F0B2011049A000F337C /* BCPViewController.m in Sources */,
 				0ED820342007CA69004ED800 /* AppDelegate.m in Sources */,
+				0EF00F74201799AF00B6000A /* UIViewController+BCPInitUI.m in Sources */,
 				0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */,
-				0EFB068C2015695B002F1596 /* NetworkingInuse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

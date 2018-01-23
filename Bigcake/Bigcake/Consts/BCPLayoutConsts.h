@@ -10,6 +10,7 @@
 #define BCPLayoutConsts_h
 
 CGFloat fixValue(CGFloat value);
+CGFloat half_of(CGFloat value);
 
 /**
  获取屏幕宽高比
@@ -23,9 +24,5 @@ CGFloat fixValue(CGFloat value);
  根据屏幕宽高比将缩放值恢复
  */
 #define REVERSE_SCALE(value)        (fixValue((value) / (kAUTOLAYOUTSCALE)))
-/**
- 取半值
- */
-#define HALF_OF(value)              (fixValue((value) / (2.f)))
 
 #endif /* BCPLayoutConsts_h */

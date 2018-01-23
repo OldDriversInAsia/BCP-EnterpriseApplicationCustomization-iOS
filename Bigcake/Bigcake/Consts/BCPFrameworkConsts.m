@@ -16,12 +16,3 @@ NSString* nullableStr(NSString *str) {
     }
     return @"";
 }
-
-NSString* append(NSString *sf,NSString *ss) {
-    return [NSString stringWithFormat:@"%@%@",nullableStr(sf),nullableStr(ss)];
-}
-
-NSString* append3(NSString *sf,NSString *ss,NSString *st) {
-    NSString *result = [NSString stringWithFormat:@"%@%@%@",nullableStr(sf),nullableStr(ss),nullableStr(st)];
-    return result;
-}

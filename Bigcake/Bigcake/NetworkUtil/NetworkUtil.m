@@ -31,13 +31,8 @@
 //    if (![self handleReachable:scrollView showViewController:showViewController]) {
 //        return;
 //    }
-//    if ([self neetAuthorization:path]) {
-//        return;
-//    }
-//    [self setCookie:[self shareManager]];
+    [self setCookie:[self shareManager]];
 //    [self showProgressHUDWhenScrollViewFirstRequest:scrollView showText:showText showViewController:showViewController];
-    
-    NSLog(@"%@",[self needSetCookiePaths]);
     
     parameters = [self commonParameters:parameters scrollView:scrollView];
     void (^requestSuccess)(NSURLSessionDataTask * task , NSDictionary* responseObject ) = ^(NSURLSessionDataTask * task , NSDictionary* responseObject) {
@@ -80,7 +75,7 @@
 //    }
 //    BaseModel *baseModel = [BaseModel objectFromJSON:responseObject];
 //    if (baseModel.status == CODE_SUCCESS && [self isSetCookiePath:path]) {
-//        [self saveCookie:[self shareManager]];
+        [self saveCookie:[self shareManager]];
 //    }
 //    if ((isCheckout && baseModel.status == CODE_SUCCESS) || !isCheckout) {
         success(task, responseObject, [self getJSONString:responseObject]);
@@ -139,71 +134,25 @@
     return manager;
 }
 
++ (void)setCookie:(AFHTTPSessionManager *)manager {
+    NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
+    [manager.requestSerializer setHTTPShouldHandleCookies:YES];
+    [manager.requestSerializer setValue:cookiesString forHTTPHeaderField:@"cookie"];
+}
+
 + (void)saveCookie:(AFHTTPSessionManager *)manager {
     NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
     NSMutableArray *cookiesStringArray = [NSMutableArray array];
     for (NSHTTPCookie *cookie in cookies) {
-        [cookiesStringArray addObject:append3(cookie.name, @"=", cookie.value)];
+        [cookiesStringArray addObject:cookie.name.append(@"=").append(cookie.value)];
+        
     }
     NSString *cookiesString = [cookiesStringArray componentsJoinedByString:@"; "];
     if ([cookiesString containsString:BCP_SSO]) {
         [[BCPCookieManager shareManager] set:cookiesString];
-//            [SharedFrameworksHelper.user setCookie:cookiesString];
-//            [SharedFrameworksHelper.user save];
+//        [SharedFrameworksHelper.user save];
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-+ (NSArray *)neetAuthorizationPaths {
-    return nil;
-}
-
-+ (BOOL)neetAuthorization:(NSString *)currentPath {
-    BOOL isNeetAuthorization = NO;
-    for (NSString *path in [self neetAuthorizationPaths]) {
-        if ([currentPath containsString:path]) {
-            isNeetAuthorization = YES;
-            break;
-        }
-    }
-//    return isNeetAuthorization && !SharedFrameworksHelper.user.cookie;
-    return isNeetAuthorization;
-}
-
-+ (NSArray *)needSetCookiePaths {
-    return nil;
-}
-
-+ (BOOL)isSetCookiePath:(NSString *)currentPath {
-    NSArray *paths = [self needSetCookiePaths];
-    BOOL isSetCookiePath = NO;
-    for (NSString *path in paths) {
-        if ([currentPath containsString:path]) {
-            isSetCookiePath = YES;
-            break;
-        }
-    }
-    return isSetCookiePath;
-}
-
-
-
-
-
 
 
 
@@ -245,12 +194,6 @@
 
 + (AFNetworkReachabilityStatus)networkReachabilityStatus {
     return [[AFNetworkReachabilityManager sharedManager] networkReachabilityStatus];
-}
-
-+ (void)setCookie:(AFHTTPSessionManager *)manager {
-    NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
-    [manager.requestSerializer setHTTPShouldHandleCookies:YES];
-    [manager.requestSerializer setValue:cookiesString forHTTPHeaderField:@"cookie"];
 }
 
 /**

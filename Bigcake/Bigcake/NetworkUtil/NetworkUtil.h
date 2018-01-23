@@ -36,15 +36,6 @@ typedef NS_ENUM(NSInteger, RequsetType) {
  */
 + (BOOL)isReachable;
 
-+ (void)setCookie:(AFHTTPSessionManager *)manager;
-
-/**
- *  未登录不能请求的接口
- *  子类重写或者在此写死
- *  如果当前请求的api包含于这些必须登陆才能访问的接口中，则当前设备如果没有登陆访问这个接口的话直接被拦截，不会调用这个接口
- */
-+ (NSArray *)neetAuthorizationPaths;
-
 /**
  *  搜索类网络请求
  *  清空线程池
@@ -82,11 +73,6 @@ typedef NS_ENUM(NSInteger, RequsetType) {
            checkOut:(BOOL)isCheckout
          scrollView:(UIScrollView *)scrollView
         requsetType:(RequsetType)type;
-
-/**
- *  子类重写，或者再此写死，需要 setCookie的 api数组
- */
-+ (NSArray *)needSetCookiePaths;
 
 /**
  *  获取用户信息的接口做判断

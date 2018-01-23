@@ -10,7 +10,5 @@
 #define BCPFrameworkConsts_h
 
 NSString* nullableStr(NSString* str);
-NSString* append(NSString *sf,NSString *ss);
-NSString* append3(NSString *sf,NSString *ss,NSString *st);
 
 #endif /* BCPFrameworkConsts_h */

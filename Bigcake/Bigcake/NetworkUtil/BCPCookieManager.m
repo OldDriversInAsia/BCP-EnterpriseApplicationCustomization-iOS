@@ -33,8 +33,4 @@
     self.cookie = cookie;
 }
 
-+ (NSString *)genCookieWith:(NSString *)cookie {
-    return [NSString stringWithFormat:@"%@=%@",BCP_SSO,cookie];
-}
-
 @end
