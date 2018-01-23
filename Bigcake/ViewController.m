@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NetworkingInuse.h"
 
 @interface ViewController ()
 
@@ -33,7 +34,7 @@
         [_button setCenterY:kScreenHeight * 0.6];
         
         [_button addTapAction:^(id sender) {
-            [NetworkUtil POSTPath:BCP_LOGIN parameters:@{@"loginName":@"lidada1",@"password":@"123456"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
+            [NetworkingInuse POSTPath:BCP_LOGIN parameters:@{@"loginName":@"lidada1",@"password":@"123456"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
                 NSLog(@"%@",JSONString);
             }];
         }];
@@ -51,7 +52,7 @@
         [_button1 setCenterY:kScreenHeight * 0.8];
         
         [_button1 addTapAction:^(id sender) {
-            [NetworkUtil GETPath:BCP_TEST parameters:@{@"param":@"Hello,world!"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
+            [NetworkingInuse GETPath:BCP_TEST parameters:@{@"param":@"Hello,world!"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
                 NSLog(@"%@",JSONString);
             }];
         }];

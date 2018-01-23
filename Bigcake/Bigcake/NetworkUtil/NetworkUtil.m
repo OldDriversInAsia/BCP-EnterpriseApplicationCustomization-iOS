@@ -28,14 +28,17 @@
            checkOut:(BOOL)isCheckout
          scrollView:(UIScrollView *)scrollView
         requsetType:(RequsetType)type {
-    //    if (![self handleReachable:scrollView showViewController:showViewController]) {
-    //        return;
-    //    }
-    //    if ([self neetAuthorization:path]) {
-    //        return;
-    //    }
-    //    [self setCookie:[self shareManager]];
-    //    [self showProgressHUDWhenScrollViewFirstRequest:scrollView showText:showText showViewController:showViewController];
+//    if (![self handleReachable:scrollView showViewController:showViewController]) {
+//        return;
+//    }
+//    if ([self neetAuthorization:path]) {
+//        return;
+//    }
+//    [self setCookie:[self shareManager]];
+//    [self showProgressHUDWhenScrollViewFirstRequest:scrollView showText:showText showViewController:showViewController];
+    
+    NSLog(@"%@",[self needSetCookiePaths]);
+    
     parameters = [self commonParameters:parameters scrollView:scrollView];
     void (^requestSuccess)(NSURLSessionDataTask * task , NSDictionary* responseObject ) = ^(NSURLSessionDataTask * task , NSDictionary* responseObject) {
         [self handleRequestSuccessPath:path parameters:parameters task:task responseObject:responseObject showViewController:showViewController checkOut:isCheckout scrollView:scrollView success:success];
@@ -61,31 +64,31 @@
                         checkOut:(BOOL)isCheckout
                       scrollView:(UIScrollView *)scrollView
                          success:(void (^)(NSURLSessionDataTask * task , NSDictionary* responseObject , NSString *JSONString))success {
-    //    [scrollView setFirstRequest:NO];
-    //
-    //    [self checkUserInfoComplete:path parameters:parameters responseObject:responseObject];
-    //    /**
-    //     *  可添加错误状态拦截
-    //     */
-    //    if (scrollView) {
-    //        if ((scrollView.start == 0 && !scrollView.startIdKeyPath) || scrollView.isRefreshData) {
-    //            [scrollView.data removeAllObjects];
-    //        }
-    //        [scrollView setRefreshData:NO];
-    //        [scrollView.mj_header endRefreshing];
-    //        [scrollView.mj_footer endRefreshing];
-    //    }
-    //    BaseModel *baseModel = [BaseModel objectFromJSON:responseObject];
-    //    if (baseModel.status == CODE_SUCCESS && [self isSetCookiePath:path]) {
-    //        [self saveCookie:[self shareManager]];
-    //    }
-    //    if ((isCheckout && baseModel.status == CODE_SUCCESS) || !isCheckout) {
-            success(task, responseObject, [self getJSONString:responseObject]);
-    //    } else {
-    //        NSLog(@"%@", responseObject);
-    //        showAlert(baseModel.msg)
-    //    }
-    //    [showViewController hideProgressHUD];
+//    [scrollView setFirstRequest:NO];
+//
+//    [self checkUserInfoComplete:path parameters:parameters responseObject:responseObject];
+//    /**
+//     *  可添加错误状态拦截
+//     */
+//    if (scrollView) {
+//        if ((scrollView.start == 0 && !scrollView.startIdKeyPath) || scrollView.isRefreshData) {
+//            [scrollView.data removeAllObjects];
+//        }
+//        [scrollView setRefreshData:NO];
+//        [scrollView.mj_header endRefreshing];
+//        [scrollView.mj_footer endRefreshing];
+//    }
+//    BaseModel *baseModel = [BaseModel objectFromJSON:responseObject];
+//    if (baseModel.status == CODE_SUCCESS && [self isSetCookiePath:path]) {
+//        [self saveCookie:[self shareManager]];
+//    }
+//    if ((isCheckout && baseModel.status == CODE_SUCCESS) || !isCheckout) {
+        success(task, responseObject, [self getJSONString:responseObject]);
+//    } else {
+//        NSLog(@"%@", responseObject);
+//        showAlert(baseModel.msg)
+//    }
+//    [showViewController hideProgressHUD];
 }
 
 + (void)handleRequestFailedPath:(NSString *)path
@@ -94,18 +97,21 @@
              showViewController:(UIViewController *)showViewController
                      scrollView:(UIScrollView *)scrollView
                         failure:(void (^)(NSURLSessionDataTask * task, NSError * error))failure {
-    //    if (scrollView) {
-    //        [scrollView setRefreshData:NO];
-    //        [scrollView.mj_header endRefreshing];
-    //        [scrollView.mj_footer endRefreshing];
-    //    }
-    //    NSString *errorUserInfo = ((NSError *)error.userInfo[@"NSUnderlyingError"]).userInfo[@"NSLocalizedDescription"];
-    //    [self onRequestFaied:errorUserInfo];
-    //    if (failure) {
-    //        failure(task, error);
-    //    }
-    //    [showViewController hideProgressHUD];
-    //    NSLog(@"%@", error);
+//    if (scrollView) {
+//        [scrollView setRefreshData:NO];
+//        [scrollView.mj_header endRefreshing];
+//        [scrollView.mj_footer endRefreshing];
+//    }
+//    NSString *errorUserInfo = ((NSError *)error.userInfo[@"NSUnderlyingError"]).userInfo[@"NSLocalizedDescription"];
+//    [self onRequestFaied:errorUserInfo];
+//    if (failure) {
+//        failure(task, error);
+//    }
+//    [showViewController hideProgressHUD];
+//    NSLog(@"%@", error);
+    if (error.code == -1001) {
+        NSLog(@"timeout");
+    }
 }
 
 + (AFHTTPSessionManager *)shareManager {
@@ -124,11 +130,75 @@
         manager.responseSerializer.acceptableContentTypes = acceptableContentTypesSet;
         [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         [manager.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"Request-By"];
+        
+        [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
+        manager.requestSerializer.timeoutInterval = 10.f;
+        [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
+        
     });
     return manager;
 }
 
++ (void)saveCookie:(AFHTTPSessionManager *)manager {
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
+    NSMutableArray *cookiesStringArray = [NSMutableArray array];
+    for (NSHTTPCookie *cookie in cookies) {
+        [cookiesStringArray addObject:append3(cookie.name, @"=", cookie.value)];
+    }
+    NSString *cookiesString = [cookiesStringArray componentsJoinedByString:@"; "];
+    if ([cookiesString containsString:BCP_SSO]) {
+        [[BCPCookieManager shareManager] set:cookiesString];
+//            [SharedFrameworksHelper.user setCookie:cookiesString];
+//            [SharedFrameworksHelper.user save];
+    }
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++ (NSArray *)neetAuthorizationPaths {
+    return nil;
+}
+
++ (BOOL)neetAuthorization:(NSString *)currentPath {
+    BOOL isNeetAuthorization = NO;
+    for (NSString *path in [self neetAuthorizationPaths]) {
+        if ([currentPath containsString:path]) {
+            isNeetAuthorization = YES;
+            break;
+        }
+    }
+//    return isNeetAuthorization && !SharedFrameworksHelper.user.cookie;
+    return isNeetAuthorization;
+}
+
++ (NSArray *)needSetCookiePaths {
+    return nil;
+}
+
++ (BOOL)isSetCookiePath:(NSString *)currentPath {
+    NSArray *paths = [self needSetCookiePaths];
+    BOOL isSetCookiePath = NO;
+    for (NSString *path in paths) {
+        if ([currentPath containsString:path]) {
+            isSetCookiePath = YES;
+            break;
+        }
+    }
+    return isSetCookiePath;
+}
 
 
 
@@ -183,38 +253,6 @@
     [manager.requestSerializer setValue:cookiesString forHTTPHeaderField:@"cookie"];
 }
 
-+ (void)saveCookie:(AFHTTPSessionManager *)manager {
-    NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
-    if (!cookiesString.length) {
-        NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
-        NSMutableArray *cookiesStringArray = [NSMutableArray array];
-        for (NSHTTPCookie *cookie in cookies) {
-            [cookiesStringArray addObject:append3(cookie.name, @"=", cookie.value)];
-        }
-        cookiesString = [cookiesStringArray componentsJoinedByString:@"; "];
-        if ([cookiesString containsString:BCP_SSO]) {
-//            [SharedFrameworksHelper.user setCookie:cookiesString];
-//            [SharedFrameworksHelper.user save];
-        }
-    }
-}
-
-+ (NSArray *)neetAuthorizationPaths {
-    return nil;
-}
-
-+ (BOOL)neetAuthorization:(NSString *)currentPath {
-//    BOOL isNeetAuthorization = NO;
-//    for (NSString *path in [self neetAuthorizationPaths]) {
-//        if ([currentPath containsString:path]) {
-//            isNeetAuthorization = YES;
-//            break;
-//        }
-//    }
-//    return isNeetAuthorization && !SharedFrameworksHelper.user.cookie;
-    return YES;
-}
-
 /**
  * 清空线程池
  */
@@ -256,34 +294,6 @@
 //        [showViewController showProgressHUD:showText];
 //    }
 }
-
-
-
-+ (NSArray *)needSetCookiePaths {
-    return nil;
-}
-
-+ (BOOL)isSetCookiePath:(NSString *)currentPath {
-    NSArray *paths = [self needSetCookiePaths];
-    BOOL isSetCookiePath = NO;
-    for (NSString *path in paths) {
-        if ([currentPath containsString:path]) {
-            isSetCookiePath = YES;
-            break;
-        }
-    }
-    return isSetCookiePath;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
