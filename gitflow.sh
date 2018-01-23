@@ -4,5 +4,5 @@ git config --global user.name "yuri"
 
 git add .
 git commit -am "$(date +%Y%m%d)"
-git push origin master:master
+git push origin develop:develop
 
