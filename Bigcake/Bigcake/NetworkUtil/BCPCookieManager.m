@@ -33,4 +33,9 @@
     self.cookie = cookie;
 }
 
+- (void)clear {
+    [self set:@""];
+//    self.cookie = @"";
+}
+
 @end

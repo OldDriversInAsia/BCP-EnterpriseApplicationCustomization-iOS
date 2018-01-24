@@ -7,9 +7,8 @@
 //
 
 #import "NetworkUtil.h"
-#import "BCPNetworkConst.h"
-#import "BCPCookieManager.h"
-#import "BCPFrameworkConsts.h"
+//#import "BCPNetworkConst.h"
+//#import "BCPFrameworkConsts.h"
 
 @interface NetworkUtil ()
 
@@ -77,7 +76,9 @@
 //    }
 //    BaseModel *baseModel = [BaseModel objectFromJSON:responseObject];
 //    if (baseModel.status == CODE_SUCCESS && [self isSetCookiePath:path]) {
+    if ([[responseObject objectForKey:@"code"] integerValue] == 0) {
         [self saveCookie:[self shareManager]];
+    }
 //    }
 //    if ((isCheckout && baseModel.status == CODE_SUCCESS) || !isCheckout) {
         success(task, responseObject, [self getJSONString:responseObject]);

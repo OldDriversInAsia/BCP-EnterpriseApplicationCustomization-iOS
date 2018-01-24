@@ -10,8 +10,9 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) UIButton *button;
-@property (nonatomic, strong) UIButton *button1;
+@property (nonatomic, strong) UIButton *login;
+@property (nonatomic, strong) UIButton *test;
+@property (nonatomic, strong) UIButton *clear;
 
 @end
 
@@ -22,46 +23,63 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (UIButton *)button {
-    if (!_button) {
-        _button = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_button setTitle:@"login" forState:UIControlStateNormal];
-        [_button setBackgroundColor:[UIColor cyanColor]];
-        [_button setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
-        [_button setCenterX:half_of(kScreenWidth)];
-        [_button setCenterY:kScreenHeight * 0.6];
+- (UIButton *)login {
+    if (!_login) {
+        _login = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_login setTitle:@"login" forState:UIControlStateNormal];
+        [_login setBackgroundColor:[UIColor cyanColor]];
+        [_login setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
+        [_login setCenterX:half_of(kScreenWidth)];
+        [_login setCenterY:kScreenHeight * 0.4];
         
-        [_button addTapAction:^(id sender) {
+        [_login addTapAction:^(id sender) {
             [NetworkUtil POSTPath:BCP_LOGIN parameters:@{@"loginName":@"lidada1",@"password":@"123456"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
                 NSLog(@"%@",JSONString);
             }];
         }];
     }
-    return _button;
+    return _login;
 }
 
-- (UIButton *)button1 {
-    if (!_button1) {
-        _button1 = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_button1 setTitle:@"test" forState:UIControlStateNormal];
-        [_button1 setBackgroundColor:[UIColor yellowColor]];
-        [_button1 setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
-        [_button1 setCenterX:half_of(kScreenWidth)];
-        [_button1 setCenterY:kScreenHeight * 0.8];
+- (UIButton *)test {
+    if (!_test) {
+        _test = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_test setTitle:@"test" forState:UIControlStateNormal];
+        [_test setBackgroundColor:[UIColor yellowColor]];
+        [_test setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
+        [_test setCenterX:half_of(kScreenWidth)];
+        [_test setCenterY:kScreenHeight * 0.6];
         
-        [_button1 addTapAction:^(id sender) {
+        [_test addTapAction:^(id sender) {
             [NetworkUtil GETPath:BCP_TEST parameters:@{@"param":@"Hello,world!"} success:^(NSURLSessionDataTask *task, id responseObject, NSString *JSONString) {
                 NSLog(@"%@",JSONString);
             }];
         }];
     }
-    return _button1;
+    return _test;
+}
+
+- (UIButton *)clear {
+    if (!_clear) {
+        _clear = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_clear setTitle:@"clear" forState:UIControlStateNormal];
+        [_clear setBackgroundColor:[UIColor purpleColor]];
+        [_clear setFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
+        [_clear setCenterX:half_of(kScreenWidth)];
+        [_clear setCenterY:kScreenHeight * 0.8];
+        
+        [_clear addTapAction:^(id sender) {
+            [[BCPCookieManager shareManager] clear];
+        }];
+    }
+    return _clear;
 }
 
 - (void)bcpInitView {
     [super bcpInitView];
-    [self.view addSubview:self.button];
-    [self.view addSubview:self.button1];
+    [self.view addSubview:self.login];
+    [self.view addSubview:self.test];
+    [self.view addSubview:self.clear];
 }
 
 - (void)didReceiveMemoryWarning {

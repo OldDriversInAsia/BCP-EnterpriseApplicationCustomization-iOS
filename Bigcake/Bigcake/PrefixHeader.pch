@@ -29,6 +29,7 @@
 //NetworkUitl
 #import "NetWorkUtil+GET.h"
 #import "NetWorkUtil+POST.h"
+#import "BCPCookieManager.h"
 
 //Pods
 #import "YYKit.h"
