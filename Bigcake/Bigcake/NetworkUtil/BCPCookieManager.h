@@ -16,8 +16,9 @@
 @interface BCPCookieManager : NSObject
 
 + (BCPCookieManager *)shareManager;
-- (NSString *)cookie;
-- (void)set:(NSString *)cookie;
-- (void)clear;
+
++ (void)clear;
++ (void)setManager;
++ (void)save;
 
 @end

@@ -31,7 +31,7 @@
 //    if (![self handleReachable:scrollView showViewController:showViewController]) {
 //        return;
 //    }
-    [self setCookie:[self shareManager]];
+    [BCPCookieManager setManager];
 //    [self showProgressHUDWhenScrollViewFirstRequest:scrollView showText:showText showViewController:showViewController];
     
     parameters = [self commonParameters:parameters scrollView:scrollView];
@@ -76,9 +76,7 @@
 //    }
 //    BaseModel *baseModel = [BaseModel objectFromJSON:responseObject];
 //    if (baseModel.status == CODE_SUCCESS && [self isSetCookiePath:path]) {
-    if ([[responseObject objectForKey:@"code"] integerValue] == 0) {
-        [self saveCookie:[self shareManager]];
-    }
+        [BCPCookieManager save];
 //    }
 //    if ((isCheckout && baseModel.status == CODE_SUCCESS) || !isCheckout) {
         success(task, responseObject, [self getJSONString:responseObject]);
@@ -155,27 +153,7 @@
     [self requestPath:path parameters:parameters success:success failure:nil showText:nil showViewController:showViewController checkOut:YES scrollView:nil requsetType:type];
 }
 
-//设置cookie
-+ (void)setCookie:(AFHTTPSessionManager *)manager {
-    NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
-    [manager.requestSerializer setHTTPShouldHandleCookies:YES];
-    [manager.requestSerializer setValue:cookiesString forHTTPHeaderField:@"cookie"];
-}
 
-//保存cookie
-+ (void)saveCookie:(AFHTTPSessionManager *)manager {
-    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
-    NSMutableArray *cookiesStringArray = [NSMutableArray array];
-    for (NSHTTPCookie *cookie in cookies) {
-        [cookiesStringArray addObject:cookie.name.append(@"=").append(cookie.value)];
-        
-    }
-    NSString *cookiesString = [cookiesStringArray componentsJoinedByString:@"; "];
-    if ([cookiesString containsString:BCP_SSO]) {
-        [[BCPCookieManager shareManager] set:cookiesString];
-//        [SharedFrameworksHelper.user save];
-    }
-}
 
 
 

@@ -25,17 +25,29 @@
     return manager;
 }
 
-- (NSString *)cookie {
-    return _cookie;
++ (void)clear {
+    [[BCPCookieManager shareManager] setCookie:@""];
 }
 
-- (void)set:(NSString *)cookie {
-    self.cookie = cookie;
++ (void)setManager {
+    NSString *cookiesString = [[BCPCookieManager shareManager] cookie];
+    [[[NetworkUtil shareManager] requestSerializer] setValue:cookiesString forHTTPHeaderField:@"cookie"];
+    [[[NetworkUtil shareManager] requestSerializer] setHTTPShouldHandleCookies:YES];
 }
 
-- (void)clear {
-    [self set:@""];
-//    self.cookie = @"";
++ (void)save {
+    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:APIBASE]];
+    NSMutableArray *cookiesStringArray = [NSMutableArray array];
+    for (NSHTTPCookie *cookie in cookies) {
+        [cookiesStringArray addObject:cookie.name.append(@"=").append(cookie.value)];
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+    }
+    NSString *cookiesString = [cookiesStringArray componentsJoinedByString:@"; "];
+    if ([cookiesString containsString:BCP_SSO]) {
+        [[BCPCookieManager shareManager] setCookie:cookiesString];
+    }else {
+//        [BCPCookieManager clear];
+    }
 }
 
 @end

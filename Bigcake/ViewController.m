@@ -69,7 +69,7 @@
         [_clear setCenterY:kScreenHeight * 0.8];
         
         [_clear addTapAction:^(id sender) {
-            [[BCPCookieManager shareManager] clear];
+            [BCPCookieManager clear];
         }];
     }
     return _clear;

@@ -13,6 +13,8 @@
 		0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD369C201455E5006DBA2E /* NetworkUtil+Post.m */; };
 		0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */; };
 		0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */; };
+		0ECD19D72018E61D00F76047 /* BCPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD19D62018E61D00F76047 /* BCPNavigationController.m */; };
+		0ECD19DB2018EAA800F76047 /* BCPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD19DA2018EAA800F76047 /* BCPTabBarController.m */; };
 		0ED820342007CA69004ED800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820332007CA69004ED800 /* AppDelegate.m */; };
 		0ED820372007CA69004ED800 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED820362007CA69004ED800 /* ViewController.m */; };
 		0ED8203A2007CA69004ED800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ED820382007CA69004ED800 /* Main.storyboard */; };
@@ -40,6 +42,10 @@
 		0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPCookieManager.m; sourceTree = "<group>"; };
 		0EBD36A32014BAC1006DBA2E /* BCPFrameworkConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPFrameworkConsts.h; sourceTree = "<group>"; };
 		0EBD36A42014BAD9006DBA2E /* BCPFrameworkConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPFrameworkConsts.m; sourceTree = "<group>"; };
+		0ECD19D52018E61D00F76047 /* BCPNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPNavigationController.h; sourceTree = "<group>"; };
+		0ECD19D62018E61D00F76047 /* BCPNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPNavigationController.m; sourceTree = "<group>"; };
+		0ECD19D92018EAA800F76047 /* BCPTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPTabBarController.h; sourceTree = "<group>"; };
+		0ECD19DA2018EAA800F76047 /* BCPTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPTabBarController.m; sourceTree = "<group>"; };
 		0ED8202F2007CA69004ED800 /* Bigcake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigcake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ED820322007CA69004ED800 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0ED820332007CA69004ED800 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +107,24 @@
 				0EBD36A12014B51A006DBA2E /* BCPCookieManager.m */,
 			);
 			path = NetworkUtil;
+			sourceTree = "<group>";
+		};
+		0ECD19D42018E5B800F76047 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0ECD19D52018E61D00F76047 /* BCPNavigationController.h */,
+				0ECD19D62018E61D00F76047 /* BCPNavigationController.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		0ECD19D82018EA8C00F76047 /* UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0ECD19D92018EAA800F76047 /* BCPTabBarController.h */,
+				0ECD19DA2018EAA800F76047 /* BCPTabBarController.m */,
+			);
+			path = UITabBarController;
 			sourceTree = "<group>";
 		};
 		0ED820262007CA69004ED800 = {
@@ -172,6 +196,8 @@
 			children = (
 				0EF00F6A201799AF00B6000A /* UIButton */,
 				0EF00F6D201799AF00B6000A /* UIViewController */,
+				0ECD19D42018E5B800F76047 /* UINavigationController */,
+				0ECD19D82018EA8C00F76047 /* UITabBarController */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -339,9 +365,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF00F77201799CD00B6000A /* NSString+append.m in Sources */,
+				0ECD19D72018E61D00F76047 /* BCPNavigationController.m in Sources */,
 				0EF00F73201799AF00B6000A /* BCPViewController.m in Sources */,
 				0ED820372007CA69004ED800 /* ViewController.m in Sources */,
 				0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */,
+				0ECD19DB2018EAA800F76047 /* BCPTabBarController.m in Sources */,
 				0ED820422007CA69004ED800 /* main.m in Sources */,
 				0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */,
 				0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */,
