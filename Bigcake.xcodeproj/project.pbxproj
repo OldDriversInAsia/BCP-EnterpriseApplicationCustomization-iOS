@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E55CA84201C965200DF553D /* BCPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA83201C965200DF553D /* BCPView.m */; };
 		0E55CA90201C971F00DF553D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA8E201C971F00DF553D /* MainViewController.m */; };
+		0E55CA93201C97F200DF553D /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA92201C97F200DF553D /* MainView.m */; };
 		0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */; };
 		0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36952013B4B1006DBA2E /* NetworkUtil.m */; };
 		0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD3699201455DB006DBA2E /* NetworkUtil+Get.m */; };
@@ -34,6 +35,8 @@
 		0E55CA83201C965200DF553D /* BCPView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPView.m; sourceTree = "<group>"; };
 		0E55CA8E201C971F00DF553D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0E55CA8F201C971F00DF553D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		0E55CA91201C97F200DF553D /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		0E55CA92201C97F200DF553D /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		0EBD36902013A715006DBA2E /* BCPLayoutConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPLayoutConsts.h; sourceTree = "<group>"; };
 		0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPLayoutConsts.m; sourceTree = "<group>"; };
 		0EBD36942013B4B1006DBA2E /* NetworkUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkUtil.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 			children = (
 				0E55CA8F201C971F00DF553D /* MainViewController.h */,
 				0E55CA8E201C971F00DF553D /* MainViewController.m */,
+				0E55CA91201C97F200DF553D /* MainView.h */,
+				0E55CA92201C97F200DF553D /* MainView.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -234,8 +239,8 @@
 		0EF00F6A201799AF00B6000A /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				0EF00F6B201799AF00B6000A /* UIButton+Add.m */,
 				0EF00F6C201799AF00B6000A /* UIButton+Add.h */,
+				0EF00F6B201799AF00B6000A /* UIButton+Add.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */,
 				0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */,
 				0ED820342007CA69004ED800 /* AppDelegate.m in Sources */,
+				0E55CA93201C97F200DF553D /* MainView.m in Sources */,
 				0EF00F74201799AF00B6000A /* UIViewController+BCPInitUI.m in Sources */,
 				0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */,
 			);

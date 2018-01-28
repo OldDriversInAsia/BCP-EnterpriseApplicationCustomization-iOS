@@ -10,4 +10,6 @@
 
 @interface BCPView : UIView
 
+- (void)initView;
+
 @end
