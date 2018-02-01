@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1E56DB20229A3D002921E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E56D820229A3D002921E0 /* LoginViewController.m */; };
+		0E1E56DC20229A3D002921E0 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1E56D920229A3D002921E0 /* LoginView.m */; };
 		0E55CA84201C965200DF553D /* BCPView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA83201C965200DF553D /* BCPView.m */; };
-		0E55CA90201C971F00DF553D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA8E201C971F00DF553D /* LoginViewController.m */; };
-		0E55CA93201C97F200DF553D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E55CA92201C97F200DF553D /* LoginView.m */; };
 		0EB61BFB201E9DE5003B2562 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB61BFA201E9DE5003B2562 /* RootViewController.m */; };
 		0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36912013A93B006DBA2E /* BCPLayoutConsts.m */; };
 		0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD36952013B4B1006DBA2E /* NetworkUtil.m */; };
@@ -32,12 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E1E56D720229A3D002921E0 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		0E1E56D820229A3D002921E0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0E1E56D920229A3D002921E0 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		0E1E56DA20229A3D002921E0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0E55CA82201C965200DF553D /* BCPView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPView.h; sourceTree = "<group>"; };
 		0E55CA83201C965200DF553D /* BCPView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCPView.m; sourceTree = "<group>"; };
-		0E55CA8E201C971F00DF553D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		0E55CA8F201C971F00DF553D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		0E55CA91201C97F200DF553D /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		0E55CA92201C97F200DF553D /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		0EB61BF9201E9DE5003B2562 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		0EB61BFA201E9DE5003B2562 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		0EBD36902013A715006DBA2E /* BCPLayoutConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCPLayoutConsts.h; sourceTree = "<group>"; };
@@ -91,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E1E56D620229A3D002921E0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0E1E56D720229A3D002921E0 /* LoginView.h */,
+				0E1E56D820229A3D002921E0 /* LoginViewController.m */,
+				0E1E56D920229A3D002921E0 /* LoginView.m */,
+				0E1E56DA20229A3D002921E0 /* LoginViewController.h */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		0E55CA81201C963600DF553D /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,20 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				0EB61BF8201E9DA4003B2562 /* Root */,
-				0E55CA8D201C971F00DF553D /* Main */,
+				0E1E56D620229A3D002921E0 /* Login */,
 			);
 			path = Project;
-			sourceTree = "<group>";
-		};
-		0E55CA8D201C971F00DF553D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				0E55CA8F201C971F00DF553D /* LoginViewController.h */,
-				0E55CA8E201C971F00DF553D /* LoginViewController.m */,
-				0E55CA91201C97F200DF553D /* LoginView.h */,
-				0E55CA92201C97F200DF553D /* LoginView.m */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		0EB61BF8201E9DA4003B2562 /* Root */ = {
@@ -414,19 +414,19 @@
 				0EF00F77201799CD00B6000A /* NSString+append.m in Sources */,
 				0ECD19D72018E61D00F76047 /* BCPNavigationController.m in Sources */,
 				0EF00F73201799AF00B6000A /* BCPViewController.m in Sources */,
-				0E55CA90201C971F00DF553D /* LoginViewController.m in Sources */,
 				0E55CA84201C965200DF553D /* BCPView.m in Sources */,
 				0EBD36922013A93B006DBA2E /* BCPLayoutConsts.m in Sources */,
 				0ECD19DB2018EAA800F76047 /* BCPTabBarController.m in Sources */,
 				0ED820422007CA69004ED800 /* main.m in Sources */,
+				0E1E56DB20229A3D002921E0 /* LoginViewController.m in Sources */,
 				0EBD36A22014B51A006DBA2E /* BCPCookieManager.m in Sources */,
 				0EBD369D201455E5006DBA2E /* NetworkUtil+Post.m in Sources */,
 				0EF00F72201799AF00B6000A /* UIButton+Add.m in Sources */,
 				0EBD36A52014BAD9006DBA2E /* BCPFrameworkConsts.m in Sources */,
+				0E1E56DC20229A3D002921E0 /* LoginView.m in Sources */,
 				0EBD36962013B4B1006DBA2E /* NetworkUtil.m in Sources */,
 				0ED820342007CA69004ED800 /* AppDelegate.m in Sources */,
 				0EB61BFB201E9DE5003B2562 /* RootViewController.m in Sources */,
-				0E55CA93201C97F200DF553D /* LoginView.m in Sources */,
 				0EF00F74201799AF00B6000A /* UIViewController+BCPInitUI.m in Sources */,
 				0EBD369A201455DB006DBA2E /* NetworkUtil+Get.m in Sources */,
 			);
