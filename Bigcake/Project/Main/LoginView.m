@@ -1,18 +1,18 @@
 //
-//  MainView.m
+//  LoginView.m
 //  Bigcake
 //
 //  Created by 武国斌 on 2018/1/27.
 //  Copyright © 2018年 武国斌. All rights reserved.
 //
 
-#import "MainView.h"
+#import "LoginView.h"
 
-@interface MainView ()
+@interface LoginView ()
 
 @end
 
-@implementation MainView
+@implementation LoginView
 
 - (void)initView {
     [super initView];
@@ -34,6 +34,7 @@
 - (UITextView *)textView {
     if (!_textView) {
         _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth * 0.8, 100)];
+        [_textView setTextColor:[UIColor blueColor]];
     }
     return _textView;
 }

@@ -1,5 +1,5 @@
 //
-//  MainView.h
+//  LoginView.h
 //  Bigcake
 //
 //  Created by 武国斌 on 2018/1/27.
@@ -8,7 +8,7 @@
 
 #import "BCPView.h"
 
-@interface MainView : BCPView
+@interface LoginView : BCPView
 
 @property (nonatomic, strong) UIButton *login;
 @property (nonatomic, strong) UIButton *test;
